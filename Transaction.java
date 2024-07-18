@@ -15,4 +15,8 @@ public class Transaction {
 		
 	}
 	
+	public String toString() {
+		return "Transaction[" + "transactionID= " + transactionID + " , transactionDateTime= " + transactionDateTime + " , type= " + type + " , amount= " + amount;
+	}
+	
 }

@@ -37,7 +37,7 @@ public class Account {
 		return balance;
 	}
 	
-	public LinkedList<Transaction> getTransaction() {
+	public LinkedList<Transaction> getTransactions() {
 		return transactions;
 	}
 	

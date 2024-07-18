@@ -1,3 +1,4 @@
+import java.util.LinkedList;
 import java.util.Scanner;
 
 public class Application {
@@ -33,7 +34,8 @@ public class Application {
 				viewAccount(bank, input);
 				break;
 			case 3:
-				
+				viewAccountTransactionHistory(bank, input);
+				break;
 				
 			case 4:
 				performDeposit(bank, input);
@@ -75,6 +77,22 @@ public class Application {
 		Account account = bank.getAccount(accountNum);
 		if(account != null) {
 			System.out.println(account);
+		}
+		else {
+			System.out.println("Account not found.");
+		}
+	}
+	
+	private static void viewAccountTransactionHistory(Bank bank, Scanner input) {
+		System.out.print("Enter the account ID: ");
+		String accountNum = input.next();
+		Account account = bank.getAccount(accountNum);
+		if(account != null) {
+			LinkedList<Transaction> transactions = account.getTransactions();
+			System.out.println("\nTransactions for Account ID " + accountNum);
+			for(Transaction transaction : transactions) {
+				System.out.println(transaction);
+			}
 		}
 		else {
 			System.out.println("Account not found.");
