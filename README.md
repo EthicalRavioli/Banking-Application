@@ -4,3 +4,6 @@ This command-line banking application written in Java is meant to demonstrate so
 This project implements some of the following things I learned:
 * Object-Oriented Programming in Java
 * Data Structures (ArrayLists and LinkedLists)
+* Serialization and Deserialization
+* Exception Handling
+* Conditional logic and control flow
