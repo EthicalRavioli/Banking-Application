@@ -1,12 +1,22 @@
+/**
+ * The Account class deals with the needs a user might have in a bank
+ * @author Ethan Jones
+ */
+
+import java.io.Serializable;
+import java.text.DecimalFormat;
 import java.util.LinkedList;
 import java.util.UUID;
 
-public class Account {
+public class Account implements Serializable {
 
+	private static final long serialVersionUID = 1L;
+	
 	private String accountHolderName;
 	private String accountNum;
 	private double balance;
 	private LinkedList<Transaction> transactions;
+	private static final DecimalFormat df = new DecimalFormat("0.00");
 	
 	public Account(String accountHolderName, double balance)
 	{
@@ -41,6 +51,10 @@ public class Account {
 		return transactions;
 	}
 	
+	/**
+	 * Generates a random account number
+	 * @return An account number with 12 digits
+	 */
 	private String generateAccountNum() {
 		UUID uuid = UUID.randomUUID();
 		String uuidString = uuid.toString().replaceAll("[^0-9]", "");
@@ -59,7 +73,7 @@ public class Account {
 		balance += amount;
 		Transaction transaction = new Transaction("TRAN" + (transactions.size() + 1), "Deposit", amount);
 		transactions.add(transaction);
-		System.out.println("Deposit of $" + amount + " successful.");
+		System.out.println("Deposit of $" + df.format(amount) + " successful.");
 	}
 	
 	/**
@@ -71,7 +85,7 @@ public class Account {
 			balance -= amount;
 			Transaction transaction = new Transaction("TRAN" + (transactions.size() + 1), "Withdrawl", amount);
 			transactions.add(transaction);
-			System.out.println("Withdrawl successful.");
+			System.out.println("Withdrawl of $" + df.format(amount) + " successful.");
 			return true;
 		}
 		else {
@@ -81,7 +95,7 @@ public class Account {
 	}
 	
 	public String toString() {
-		return "Account: \n" + " Name on Account: " + accountHolderName + "\n Account Number: " + accountNum + "\n Balance: " + balance;
+		return "Account: \n" + " Name on Account: " + accountHolderName + "\n Account Number: " + accountNum + "\n Balance: " + df.format(balance);
 	}
 	
 	
