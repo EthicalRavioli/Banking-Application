@@ -1,6 +1,8 @@
 # bankingApp
 **Created by Ethan Jones**
 
+See the linked YouTube video for a demonstration of the application.
+
 This command-line banking application written in Java is meant to demonstrate some of the skills I learned during my first year as a computer science major.
 
 This project implements some of the following things I learned:
