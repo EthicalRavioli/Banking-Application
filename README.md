@@ -1,5 +1,5 @@
 # bankingApp
-**Created by Ethan Jones**
+**Created by Ethan Jones** (www.linkedin.com/in/ethan-jones-27b89428a)
 
 See the linked YouTube video for a demonstration of the application.
 
